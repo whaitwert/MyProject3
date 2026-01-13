@@ -25,7 +25,7 @@ if "sports" not in st.session_state:
 st.subheader("Избери любими неща")
 
 color = st.selectbox("Любим човек:", list(st.session_state.colors.keys()))
-sport = st.selectbox("Любима храна:", list(st.session_state.sports.keys()))
+sport = st.selectbox("Любима оценка:", list(st.session_state.sports.keys()))
 
 if st.button("Запази избора"):
     st.session_state.colors[color] += 1
@@ -44,7 +44,7 @@ colors_df = pd.DataFrame.from_dict(
 st.bar_chart(colors_df)
 
 # Графика за спортовете
-st.write("Любими храни")
+st.write("Любими оценки")
 sports_df = pd.DataFrame.from_dict(
     st.session_state.sports, orient="index", columns=["Брой"]
 )
